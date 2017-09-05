@@ -36,4 +36,5 @@ public class DatabaseConnection {
 
 Note: 
 1. Download the respective database jar for connecting the database.
-2. Use PostgresSQL,Sql,sqlServer jar for Connection and add them to built path using External Jar and Add jar.
+2. Use PostgresSQL,Sql,sqlServer jar for Connection and add them to built path using External Jar and Add jar by clicking on Built Path
+on right click to the jar location.
