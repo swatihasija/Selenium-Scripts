@@ -1,0 +1,39 @@
+package Package;
+import java.sql.*;
+
+
+public class DatabaseConnection {
+	DatabaseConnection() throws ClassNotFoundException, SQLException {
+
+
+	   String query = "select * from tablename"; 
+
+
+	   Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");//Driver Name
+
+
+	         Connection connection = DriverManager.getConnection("jdbc:sqlserver://Server Path;Database=DatabaseName;
+           UserName=user;Password=pwd;");
+
+
+	         Statement stmt = connection.createStatement();
+
+
+	      ResultSet rs = stmt.executeQuery(query);
+
+	       while(rs.next()){
+	          String id=rs.getString("columnname1");
+	          String status=rs.getString("Columnname2");
+	          System.out.println(id +""+"|"+ status);
+	          
+	         }
+	     }
+	     public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	     new DatabaseConnection();
+	     }
+}
+
+
+Note: 
+1. Download the respective database jar for connecting the database.
+2. Use PostgresSQL,Sql,sqlServer jar for Connection and add them to built path using External Jar and Add jar.
