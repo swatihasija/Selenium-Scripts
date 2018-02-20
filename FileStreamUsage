@@ -1,0 +1,30 @@
+FileInputStream fs;
+		try {
+			
+			fs = new FileInputStream(new File("Source File"));
+			Workbook wb=WorkbookFactory.create(fs);		
+			Sheet sh=wb.getSheet("Sheet1");
+			// Read from the file.
+			int rowCount=sh.getLastRowNum();
+			System.out.println(rowCount);
+			
+			//For Loop to traverse all the items in the List for order
+	for(int i=47; i < (rowCount+1); i++)
+			{
+			Row r=sh.getRow(i);
+			Cell cell=r.getCell(1);
+			ItemDescription=cell.getStringCellValue();
+			System.out.println(ItemDescription);
+			CustomerOrder CO=new CustomerOrder();
+			CO.Customer_Login();	
+			CO.Customer_OrderItem();
+	//Print Item Order is available or Error on Search.
+			Cell c1=r.createCell(2);
+	c1.setCellValue(Customer_Order.searchResult);
+	FileOutputStream fo=new FileOutputStream(new File("Destination File"));
+	wb.write(fo);
+	System.out.println("Write to Excel Command Executed");
+	System.out.println("Customer Order Successfully");
+	CO.Customer_Logout();
+	System.out.println("Customer Logout Successfully");
+	
