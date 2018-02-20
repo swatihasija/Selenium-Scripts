@@ -1,0 +1,7 @@
+public String getFileURL(String fileName)
+	{
+		String workingDir = System.getProperty("user.dir");
+		String filepath = workingDir + "\\UploadFile\\" +fileName;
+		
+		return filepath;
+	}
